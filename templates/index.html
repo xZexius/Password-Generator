@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Generador de Contraseñas</title>
+</head>
+<body>
+    <h1>Generador de Contraseñas</h1>
+    <form action="/generate" method="POST">
+        <label for="length">Longitud:</label>
+        <input type="number" id="length" name="length" min="6" max="50" value="12">
+        <br>
+        <input type="checkbox" id="letters" name="letters" checked>
+        <label for="letters">Letras (A-Z, a-z)</label>
+        <br>
+        <input type="checkbox" id="numbers" name="numbers" checked>
+        <label for="numbers">Números (0-9)</label>
+        <br>
+        <input type="checkbox" id="symbols" name="symbols">
+        <label for="symbols">Símbolos (e.g., !@#$%^&*)</label>
+        <br>
+        <button type="submit">Generar Contraseña</button>
+    </form>
+    {% if password %}
+    <h2>Tu Contraseña Generada:</h2>
+    <p class="password">{{ password }}</p>
+    {% endif %}
+</body>
+</html>
