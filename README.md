@@ -14,4 +14,6 @@
 
 • Flask: ```pip install flask```
 
+<h2> How to Use: </h2>
+
 ```Run app.py | It starts on 127.0.0.1:5000```
